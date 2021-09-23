@@ -1,0 +1,17 @@
+SELECT * FROM produto;
+SELECT * FROM produto WHERE categoria = 'cereais';
+SELECT * FROM produto WHERE estoque = 0;
+SELECT * FROM produto WHERE (idproduto%2)=0;
+SELECT * FROM produto WHERE (estoque>0) AND (valor_venda > 17);
+SELECT * FROM produto WHERE (valor_venda>=8) AND (valor_venda<=10);
+SELECT * FROM produto WHERE valor_venda BETWEEN 8 AND 10;
+SELECT * FROM produto WHERE ((categoria='cereais' OR categoria='biscoitos') AND valor_venda BETWEEN 20 AND 30);
+SELECT * FROM produto WHERE nome LIKE "%chocolate";
+SELECT * FROM produto WHERE (nome LIKE "Margarina%") AND (estoque>0);
+SELECT * FROM produto WHERE (data_cadastro >= '2018-03-17') AND (data_cadastro <= '2018-03-25');
+SELECT * FROM produto WHERE data_cadastro BETWEEN '2018-03-17' AND '2018-03-25';
+SELECT DISTINCT categoria FROM produto;
+SELECT * FROM produto WHERE (valor_venda * 0.5) > 15;
+SELECT COUNT(*) FROM produto WHERE data_cadastro = '2018-03-12';
+SELECT * FROM produto WHERE (estoque+2)>8;
+SELECT * FROM produto WHERE (categoria='cereais') OR (estoque=0);

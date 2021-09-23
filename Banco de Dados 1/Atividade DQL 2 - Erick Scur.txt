@@ -1,0 +1,11 @@
+SELECT * FROM produto WHERE categoria IN('cereais','biscoitos');
+SELECT * FROM produto WHERE data_cadastro IN('2018-03-17','2018-03-12','2018-03-29');
+SELECT * FROM produto WHERE categoria = 'cereais' ORDER BY valor_venda DESC LIMIT 2;
+SELECT * FROM produto WHERE categoria = 'cereais' ORDER BY valor_venda DESC LIMIT 2,1;
+SELECT * FROM produto ORDER BY data_cadastro ASC;
+SELECT * FROM produto ORDER BY valor_venda DESC LIMIT 3;
+SELECT * FROM produto ORDER BY data_vencimento ASC LIMIT 1;
+SELECT SUM(estoque) FROM produto WHERE categoria = 'biscoitos';
+SELECT SUM(estoque) FROM produto WHERE nome LIKE '%argarina%';
+SELECT AVG(valor_venda) FROM produto WHERE nome LIKE "%veia%";
+SELECT AVG(valor_venda) FROM produto WHERE categoria = 'laticínios';

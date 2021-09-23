@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    background: url("img/background.jpg") no-repeat center fixed;
+    background-size: cover;
+    color: white;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+}
+.col-imgperfil img{
+    padding: 10% 10% 10% 20%;
+    border-radius: 20%;
+}
+.col-imgperfil{
+    width: 40%;
+}
+.col-descricao{
+    align-items: center;
+    padding-top: 15%;
+    width: 60%;
+}
+.col-descricao h1{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.social-icon{
+    max-width: 60px;
+    padding-right: 10px;
+    transition: all 600ms;
+}
+.social-icon:hover{
+    transform: scale(1.1);
+}
+.col-skills{
+    width: 40%;
+    padding-left: 10%;
+    font-size: 20px;
+}
+.col-formacao{
+    text-align: center;
+}
+table, th, td{
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: left;
+}
+tr:hover{
+    color: rgb(228, 46, 228);
+    background-color: white;
+    transition: 400ms;
+}
+.col-inspiracao{
+    width: 30%;
+    padding-right: 20px;
+}
+.col-inspiracao img{
+    height: 240px;
+}
+.col-inspiracao h4{
+    font-size: 30px;
+    margin-bottom: 0px;
+    height: 111px;
+}
+.col-inspiracao h5{
+    font-size: 20px;
+}
+#inspiracoes{
+    padding-left: 2.5%;
+    font-size: 40px;
+}
+.inspiracao{
+    text-align: center;
+    justify-content: center;
+}
