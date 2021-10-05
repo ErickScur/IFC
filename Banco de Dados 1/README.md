@@ -1,4 +1,4 @@
-# Banco de Dados 1
+# DQL (data query language)
 
 ## Seleção
 ### Estrutura básica de uma seleção:
@@ -154,4 +154,22 @@ Faz a média aritmética dos valores retornados
 - Ex: Apresentar a média de salário do setor financeiro
 > SELECT AVG(salario) FROM empregado WHERE setor=‘financeiro’
 
+<br></br>
 
+# DML(data manipulation language)
+
+## INSERT
+Insere valores no banco
+> INSERT INTO tabela (colunas) VALUES (valores);
+
+<br></br>
+
+## UPDATE
+Atualiza registros
+> UPDATE tabela SET coluna1=valor1, coluna2=valor2, coluna3=valor3 WHERE condição
+
+<br></br>
+
+## DELETE
+Deleta registros
+> DELETE FROM tabela WHERE condição
