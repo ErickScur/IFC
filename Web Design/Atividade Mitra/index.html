@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mitra - Tecnologia Solar">
+    <meta name="keywords" content="Mitra, Energia Solar, Energia Sustentavel, Paineis Solares">
+    <title>Mitra</title>
+</head>
+<body>
+    <header>
+        <figure>
+            <a href="#"><img src="img/Layout_Mitra_02.png" alt="Logo Mitra"></a>
+        </figure>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#energia-solar">Energia Solar</a></li>
+                <li><a href="#pedido">Pedido</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Mitra - Tecnologia Solar</h1>
+        <figure>
+            <img src="img/Layout_Mitra_06.png" alt="Ilustração Painel Solar">
+        </figure>
+        <p>Temos como objetivo criar mais e mais usuários de energia solar , por isso, comercializamos diferentes tipos de produtos que ultilizam dessa energia limpa, entre eles: Painéis solares - Postes de iluminação solar e bomba de água solar. A mitra Sempre preocupada com a qualidade e transparência resolveu... 
+            Ler mais  </p>
+        <a href="#">Ler mais</a>
+        <section id="produtos">
+            <h2>Produtos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Poste solar autônomo</th>
+                        <th>Bomba de água solar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="img/Layout_Mitra_14.jpg" alt="Produto 1"></td>
+                        <td><img src="img/Layout_Mitra_16.jpg" alt="Produto 2"></td>
+                    </tr>
+                    <tr>
+                        <td>Liga/desliga Automático</td>
+                        <td>Isolação das bobinas: classe H</td>
+                    </tr>
+                    <tr>
+                        <td>3 metros de altura</td>
+                        <td>Bombeamento até 40m (mca) de altura</td>
+                    </tr>
+                    <tr>
+                        <td>Vida Útil: 50.000 horas</td>
+                        <td>Vazões de 650 a 8.600L por dia</td>
+                    </tr>
+                    <tr>
+                        <td>Bateria 12V/18A</td>
+                        <td>Custo zero de energia elétrica</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><a href="#">Comprar</a></td>
+                        <td><a href="#">Comprar</a></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        <section id="energia-solar">
+            <h2>Energia Solar</h2>
+            <video controls>
+                <source src="img/video.ogv">
+                <source src="img/video.mp4">
+            </video>
+            <p>A Energia solar é a designação dada a qualquer tipo de captação de energia luminosa (e, em certo sentido, da energia térmica) proveniente do sol, e posterior transformação dessa energia captada em alguma forma utilizável pelo homem, seja directamente para aquecimento de água ou ainda como energia eléctrica ou mecânica.</p>
+            <p>No seu movimento de translação ao redor do Sol, a Terra recebe 1 410 W/m² de energia, medição feita numa superfície normal (em ângulo reto) com o Sol. Disso, aproximadamente 19% é absorvido pela atmosfera e 35% é reflectido pelas nuvens. Ao passar pela atmosfera terrestre, a maior parte da energia solar está na forma de luz visível e luz ultravioleta.</p>
+        </section>
+        <section id="pedido">
+            <form>
+                <fieldset>
+                    <legend><h2>Faça seu pedido</h2></legend>
+                    <p>Você pode pedir um determinado produto ou serviço preenchendo o formulário abaixo:</p>
+
+                    <label for="nome">Nome (requerido):</label>
+                    <input type="text" name="nome" id="nome" required> 
+                    <br>
+                    <label for="sobrenome">Sobrenome (requerido):</label>
+                    <input type="text" name="sobrenome" id="sobrenome" required> 
+                    <br>
+                    <label for="endereco">Endereço</label>
+                    <input type="text" name="endereco" id="endereco">
+                    <br>
+                    <label for="numero">Número</label>
+                    <input type="number" name="numero" id="numero">
+                    <br>
+                    <label for="email">Email (requerido)</label>
+                    <input type="email" name="email" id="email" required>
+                    <br>
+                    <label for="cidade">Cidade</label>
+                    <input type="text" name="cidade" id="cidade">
+                    <br>
+                    <label for="cpf">CPF (requerido)</label>
+                    <input type="text" name="cpf" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Ex: 999.999.999-02" required>
+                    <br>
+                    <label for="cep">CEP</label>
+                    <input type="text" name="cep" id="cep" pattern="\d{5}\-\d{3}" placeholder="Ex: 99999-999">
+                </fieldset>
+                <fieldset>
+                    <legend>Deseja receber notícias sobre energia</legend>
+                    <input type="radio" name="newsletter" id="sim" value="sim">
+                    <label for="sim">Sim</label>
+                    <input type="radio" name="newsletter" id="nao" value="nao">
+                    <label for="nao">Nao</label>
+                    <br>
+                </fieldset>
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+        <section id="galeria">
+            <h2>Galeria</h2>
+            <figure>
+                <img src="img/galeria1.jpg" alt="Painéis Solares em um Casa">
+                <figcaption>Painéis Solares em um Casa</figcaption>
+            </figure>
+            <figure>
+                <img src="img/galeria2.jpeg" alt="Painéis Solares">
+                <figcaption>Painéis Solares</figcaption>
+            </figure>
+            <figure>
+                <img src="img/galeria1.jpg" alt="Painéis Solares em um Casa">
+                <figcaption>Painéis Solares em um Casa</figcaption>
+            </figure>
+            <figure>
+                <img src="img/galeria2.jpeg" alt="Painéis Solares">
+                <figcaption>Painéis Solares</figcaption>
+            </figure>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#energia-solar">Energia Solar</a></li>
+                <li><a href="#pedido">Pedido</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+            </ul>
+        </nav>
+        <p>© Todos os direitos reservados - Mitra</p>
+        <ul>
+            <li><a href="#"><img src="img/Layout_Mitra_47.png" alt="Vimeo"></a></li>
+            <li><a href="#"><img src="img/Layout_Mitra_45.png" alt="Twitter"></a></li>
+            <li><a href="#"><img src="img/Layout_Mitra_42.png" alt="Facebook"></a></li>
+        </ul>
+    </footer>
+</body>
+</html>

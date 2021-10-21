@@ -1,0 +1,19 @@
+se(media >= 7.0)entao
+    inicio
+        total = total + 1;
+        imprimia("aprovado")
+    fim
+fimse
+
+se(media <= 6.9)entao
+    inicio
+        imprimia("recuperacao")
+    fim
+fimse
+
+se(media <= 4.9)entao
+    inicio
+        total = total + 1;
+        imprimia("reprovado")
+    fim
+fimse

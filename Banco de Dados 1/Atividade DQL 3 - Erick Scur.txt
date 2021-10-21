@@ -1,0 +1,91 @@
+1)
+SELECT count(a.idamizade) as qtd FROM amizade as a WHERE (a.idsolicitante = 5 OR a.iddestinatario=5) AND a.idstatus=2;
+
+2)
+SELECT u.nome, count(u.idusuario) as qtd FROM usuario as u, amizade as a
+WHERE u.idusuario = a.idsolicitante
+AND a.idstatus = 1
+group by u.idusuario
+order by qtd DESC LIMIT 3;
+
+3)
+SELECT es.nome, count(es.idestado) as qtd_usuarios_estado FROM estado as es, usuario as u, endereco as en, cidade as c
+where u.idendereco = en.idendereco
+and en.idcidade = c.idcidade
+and c.idestado = es.idestado
+group by es.idestado;
+
+4)
+SELECT c.nome, avg((YEAR(NOW()) - YEAR(u.datanascimento))) as media_idade_cidade FROM usuario as u, endereco as e, cidade as c
+WHERE u.idendereco = e.idendereco
+AND  e.idcidade = c.idcidade
+GROUP BY c.idcidade;
+
+5)
+SELECT avg((YEAR(NOW()) - YEAR(u.datanascimento))) as media_idade_fraiburgo FROM usuario as u, endereco as e, cidade as c
+WHERE u.idendereco = e.idendereco
+AND  e.idcidade = 5;
+
+6)
+SELECT u.nome FROM usuario as u, amizade as a
+WHERE u.idusuario = a.iddestinatario
+AND a.idsolicitante = 4
+AND a.idstatus = 1
+GROUP BY a.idsolicitante;
+
+7)
+SELECT u.nome, count(a.idamizade) as quantidade_amigos FROM amizade as a, usuario as u
+WHERE u.idusuario = a.idsolicitante
+AND a.idstatus = 2
+GROUP BY a.idsolicitante
+ORDER BY quantidade_amigos DESC LIMIT 3;
+
+8)
+SELECT c.nome, count((YEAR(NOW()) - YEAR(u.datanascimento))>18) as maiores_de_idade FROM usuario as u, endereco as e, cidade as c
+WHERE u.idendereco = e.idendereco
+AND  e.idcidade = c.idcidade
+GROUP BY c.idcidade;
+
+9)
+SELECT es.nome, (YEAR(NOW()) - YEAR(u.datanascimento)) as idade FROM usuario as u, endereco as e, cidade as c, estado as es
+WHERE u.idendereco = e.idendereco
+AND e.idcidade = c.idcidade
+AND c.idestado = es.idestado
+GROUP BY u.idusuario
+ORDER BY idade DESC LIMIT 1;
+
+10)
+SELECT es.nome, count(es.idestado) as qtd FROM amizade as a, usuario as u, endereco as en, cidade as ci, estado as es
+WHERE es.idestado = ci.idestado
+AND en.idcidade = ci.idcidade
+AND u.idendereco = en.idendereco
+AND a.idsolicitante = u.idusuario
+AND a.idstatus = 1
+GROUP BY es.idestado
+ORDER BY qtd DESC LIMIT 1;
+
+11)
+a) Listar o usuario mais velho que tenha pelo menos um amigo
+SELECT u.nome, YEAR(NOW()) - YEAR(u.datanascimento) as idade FROM usuario as u, amizade as a
+WHERE (a.idsolicitante = u.idusuario OR a.iddestinatario = u.idusuario)
+AND a.idstatus = 2
+group by u.idusuario
+order by idade desc limit 1;
+
+b) Listar a cidade com mais usuarios
+SELECT ci.nome, COUNT(u.idusuario) as num_usuarios FROM usuario as u, endereco as en, cidade as ci
+WHERE en.idcidade = ci.idcidade
+AND u.idendereco = en.idendereco
+GROUP BY ci.idcidade
+ORDER BY num_usuarios DESC LIMIT 1;
+
+c) Listar os usuarios maiores de idade que possuem solicitações pendentes
+SELECT u.nome, (YEAR(NOW()) - YEAR(u.datanascimento)) as idade FROM amizade as a, usuario as u, endereco as en, cidade as ci, estado as es
+WHERE es.idestado = ci.idestado
+AND en.idcidade = ci.idcidade
+AND u.idendereco = en.idendereco
+AND a.idsolicitante = u.idusuario
+AND (YEAR(NOW()) - YEAR(u.datanascimento)) > 18
+AND a.idstatus = 1
+GROUP BY u.idusuario;
+
