@@ -1,0 +1,62 @@
+INSERT INTO usuario (idusuario, nome,email,senha,telefone,cpf,data_nascimento,tipo_usu) VALUES ( 1, "Carlos Antonio", "antonio@msn.com","54321", "49 9 85476321", "1991-11-23", 2);
+INSERT INTO caderno(idcaderno, nome, id_usuario) VALUES (1, "Estudos", 1);
+INSERT INTO nota(idnota, titulo, texto, data, id_caderno) VALUES (1, "Assuntos para estudar - exame banco", "Dia 01", NOW());
+
+INSERT INTO usuario (idusuario, nome,email,senha,telefone,cpf,data_nascimento,tipo_usu) VALUES ( 2, "Geraldo Santos", "geraldo@gmail.com","12345", "49 9 88523625", "1986-06-15", 1);
+INSERT INTO lembrete (idlembrete, nome, data_criacao, data_alarme, idusuario) VALUES ( 1, "Regar as plantas", NOW(), CONCAT(CURDATE() + INTERVAL 1 DAY, " 07:00"), 2);
+
+SELECT count(u.idusuario) FROM usuario as u, cartaocredito as cc
+WHERE u.idusuario = cc.idusuario
+AND cc.mes_vencimento = MONTH(CURRENT_DATE()) 
+AND cc.ano_vencimento = YEAR(CURRENT_DATE());
+
+SELECT n.titulo, nc.idcategoria FROM nota as n, nota_categoria as nc
+WHERE nc.idnota = n.idnota
+AND nc.idcategoria BETWEEN 5 and 35;
+
+SELECT c.nome FROM caderno as c, usuario as u
+WHERE c.idusuario = u.idusuario
+AND u.tipo = 2;
+
+SELECT AVG(TIMESTAMPDIFF(YEAR, u.data_nascimento, CURDATE())) as idade FROM nota as n, caderno as c, usuario as u, notificacao as no
+WHERE n.idcaderno = c.idcaderno
+AND c.idusuario = u.idusuario
+AND no.idusuario = u.idusuario
+AND MONTH(n.data) = MONTH(CURRENT_DATE())
+AND no.data_leitura IS NULL
+GROUP BY u.idusuario;
+
+SELECT u.nome, count(l.idlembrete) as qtd_lembretes FROM usuario as u, lembrete as l
+WHERE l.idusuario = u.idusuario
+AND MONTH(l.data_criacao) = (MONTH(NOW()) - 1)
+GROUP BY u.idusuario
+ORDER BY qtd_lembretes DESC LIMIT 10;
+
+SELECT avg(count(n.idnota)) as media_notas, c.nome FROM nota as n, nota_categoria as nc, categoria as c
+WHERE nc.idcategoria = c.idcategoria
+AND nc.idnota = n.idnota
+GROUP BY c.idcategoria;
+
+UPDATE usuario SET email = REPLACE(email, "@hotmail.com","@outlook.com");
+
+UPDATE lembrete SET data_alarme = (DATE_ADD(NOW(), INTERVAL 1 HOUR))
+WHERE data_alarme = "2019-12-25";
+
+UPDATE nota_categoria as nc, nota as n, caderno as c
+SET nc.idcategoria = 5
+WHERE nc.idnota = n.idnota
+AND n.idcaderno = c.idcaderno
+AND c.idusuario = 22;
+
+UPDATE assinatura SET desconto = 20, valor = valor - (valor * 0.2)
+WHERE desconto IS NULL;
+
+DELETE nota FROM nota as n, caderno as c
+WHERE n.idcaderno = c.idcaderno
+AND c.idusuario = 7;
+
+DELETE caderno FROM caderno as c, usuario as u
+WHERE c.idusuario = u.idusuario 
+AND TIMESTAMPDIFF(YEAR, u.data_nascimento, CURDATE()) < 18;
+
+	
