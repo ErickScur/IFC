@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*=== PREDEFINIÇÕES ===*/
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+body a{
+  color: white;
+  text-decoration:none;
+}
+/*
+roxo - 87509c
+roxo escuro - 643a79
+laranja - eb7d4b
+amarelo - ffdd99
+azul escuro - 344b8e
+azul hover - 30bae7
+*/
+
+
+
+
+
+
+/*=== HEADER ===*/
+header{
+  background-color: #87509c;
+  padding: 5vw 10vw 10vw 10vw;
+    text-align: center;
+}
+header div{
+  display: flex;
+  justify-content: space-between;
+}
+header div nav ul{
+  display: flex;
+}
+header div nav ul li{
+  font-size: 2vh;
+  padding: 10px 15px;
+}
+header div nav ul li:first-child{
+  background:#672a86;
+  border-radius: 4px;
+}
+header h2{
+  color: white; 
+  text-align:  center;
+  padding: 100px 50px 50px 50px ;
+  font-size: 2.1em;
+}
+header p a{
+  background-color: #eb7d4b;
+  border-radius: 5px;
+  padding: 22px 40px;
+}
+
+/*=== NOSSOS SERVIÇOS ===*/
+section.servico{
+  background-color: #17c2a4;
+  padding: 5vw 10vw 10vw 10vw;
+  color: white;
+  text-align: center;
+}
+section.servico h2{
+  font-size: 3vw;
+  padding: 1vw 1vw 1vw 1vw;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+section.servico>p{
+  font-size: 1.5em;
+  padding: 1vw 12vw 4vw 12vw;
+}
+
+section.servico ul{
+  display: flex;
+}
+section.servico ul li{
+  margin: 0 2%;
+}
+section.servico ul li h3{
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+/*=== PORTFÓLIO ===*/
+
+section.port {
+  background-color: #ffdd99;
+  padding: 5vw 10vw 10vw 10vw;
+  color: #393939;
+}
+section.port{
+  text-align: center;
+}
+section.port h4{
+  text-align: center;
+  font-size: 2.5em;
+}
+section.port p{
+  font-size: 1.0em;
+  text-align: center;
+  padding: 15px 15px;
+}
+section.port nav{
+  display: flex;
+  justify-content: center;
+  padding: 30px 50px;
+}
+section.port nav ul{
+  display: flex;
+  text-align: center;
+}
+section.port nav ul li{
+  font-size: 2vh;
+  padding: 3px 5px;
+  
+}
+section.port nav ul li a{
+  color: #393939;
+  background: #ebc985;
+  border-radius: 4px;
+  padding: 10px 30px;
+}
+
+section.port p{
+  text-align: center;
+  margin-top: 2vh;
+}
+section.port p a{
+  background-color: #17c2a4;
+  border-radius: 5px;
+  padding: 22px 40px;
+}
+
+section.port div{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+section.port figure{
+  text-align: center;
+  width: 40%;
+  padding: 10px 15px;
+}
+section.port figure img{
+  width: 100%;
+}
+
+/*=== FOOTER ===*/
+footer{
+  background-color: #344b8e;
+}
+footer nav ul{
+  display: flex;
+  justify-content: center;
+  padding: 15px 0px;
+}
+footer nav ul li a{
+  padding: 15px 25px;
+  display: inline-flex;
+}

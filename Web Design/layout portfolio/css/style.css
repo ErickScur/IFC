@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+body{
+    font-family: 'Inter', sans-serif;
+    color: #6B7280;
+}
+
+header {
+    text-align: center;
+}
+
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 7vh 10vw 3vh 10vw;
+}
+
+header .navbar nav ul {
+    display: flex;
+    align-items: center;
+}
+
+header .navbar nav ul li {
+    margin-top: 20px;
+    padding: 10px 15px;
+}
+
+header .navbar nav ul li a{
+    font-size: 18px;
+    padding: 20px 30px;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+}
+
+header .navbar nav ul li a#hire-me{
+    color: #3730A3;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.container{
+    display: flex;
+    max-width: 100%;
+    margin-top: 3vh;
+    padding: 7vh 10vw 3vh 10vw;
+}
+
+main section#banner .banner-info{
+    width: 50%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding-top: 2vh;
+}
+main section#banner .banner-info h2{
+    color: rgba(67, 56, 202, 1);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+main section#banner .banner-info h1{
+    color: rgba(31, 41, 55, 1);
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+main section#banner .banner-info p{
+    color: rgba(107, 114, 128, 1);
+    font-size: 18px;
+    padding-right: 10vw;
+    margin-bottom: 40px;
+    line-height: 28px;
+}
+main section#banner .banner-info .row-buttons{
+    margin-bottom: 40px;
+}
+main section#banner .banner-info .row-buttons a{
+    padding: 16px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 18px;
+}
+main section#banner .banner-info .row-buttons a:first-child{
+    background: #3730A3;
+    margin-right: 30px;
+    color: #ffffff;
+}
+main section#banner .banner-info .row-buttons a:last-child{
+    background: #ffffff;
+    color: #3730A3;
+    border: 1px solid #3730A3;
+}
+main section#banner .banner-info p:last-child{
+    font-size: 12px;
+}
+main section#banner .banner-img{
+    text-align: right;
+    width: 50%;
+}
+
+main section#bannerTexto{
+    text-align: center;
+    margin-top: 15vh;
+}
+main section#bannerTexto h2 {
+    color: #1F2937;
+    font-size: 48px;
+    font-weight: 600;
+    padding: 0 10vw;
+}
+  
+main section#bannerTexto h2 span {
+    color: #3730A3;
+}
+
+main section#grid .container-grid{
+    max-width: 100%;
+    margin-top: 7vh;
+    padding: 7vh 10vw 3vh 10vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+}
+
+main section#grid .container-grid li{
+    padding-top: 40px;
+    padding-right: 100px;
+}
+main section#grid .container-grid li h3{
+    color: #1F2937;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+main section#grid .container-grid li p{
+    color: #6B7280;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+main section#grid .container-grid li a{
+    color: #3730A3;
+    text-decoration: none;
+    font-weight: 500;
+}

@@ -1,0 +1,85 @@
+1)
+a)
+INSERT INTO estado(idestado, nome) VALUES (1, 'Bahia');
+INSERT INTO cidade(idcidade, nome, idestado) VALUES (1, 'Feira de Santana', 1);
+INSERT INTO endereco(idendereco, logradouro, numero, bairro, cep, idcidade) VALUES (1, "Travessa Branca", "801", "LAgeado", " 44040175", 1);
+INSERT INTO montadora(idmontadora, nome) VALUES (1, " Fiat" );
+INSERT INTO modelo(idmodelo, nome) VALUES (1, "Palio", 1);
+INSERT INTO usuario(idusuario, nome, cpf, telefone, senha, datanascimento, idendereco, idtipo) 
+VALUES (1, 'Marina Carvalho Barros', '548949498748', '53986574856', '12345', '1973-06-01', 1, 1);
+INSERT INTO carro(idcarro, idmodelo, idusuario, ano, placa, chassi) VALUES (1, 1, 1, '2018','XLD3454', '9BWZZZ377VT004251' );
+
+b)
+INSERT INTO estado(idestado, nome) VALUES (2, 'Sao Paulo');
+INSERT INTO cidade(idcidade, nome, idestado) VALUES (2, 'Bragança Paulista', 2);
+INSERT INTO endereco(idendereco, logradouro, numero, bairro, cep, idcidade) 
+VALUES (2, "Travessa Paulo de Tarso Franco Rodrigues", "1188", "centro", " 12906790", 2);
+INSERT INTO usuario(idusuario, nome, cpf, telefone, senha, datanascimento, idendereco, idtipo) 
+VALUES (2, 'Alex Dias Costa', '4654587445', '11986750934', '123456', '1985-01-11', 2, 2);
+INSERT INTO corrida(idcorrida, idusario_motorista, idusuario_passageiro, data, hora_inicio, hora_termino, valor, idformapagamento)
+VALUES (1, 1, 2, ADDDATE(NOW(), INTERVAL -1 DAY), '09:00:00', '10:00:00', 7.50, 1);
+
+2) 
+SELECT count(c.idcorrida) FROM corrida as c
+WHERE c.idusario_motorista = 7
+OR c.idusuario_passageiro = 7;
+
+3)
+SELECT * FROM corrida as c
+WHERE c.idformapagamento = 1
+AND c.valor BETWEEN 7 AND 10;
+
+4)
+SELECT * FROM corrida as co, usuario as u, carro as ca, modelo as m
+WHERE ((co.idusario_motorista = u.idusuario) OR (co.idusuario_passageiro = u.idusuario))
+AND ca.idusuario = u.idusuario
+AND ca.idmodelo = m.idmodelo
+AND m.idmontadora = 1;
+
+5)
+SELECT AVG(TIMESTAMPDIFF(YEAR, u.datanascimento, CURDATE())) as media_idade FROM usuario as u, corrida as c
+WHERE c.idusario_motorista = u.idusuario
+AND c.valor > 100
+GROUP BY u.idusuario;
+
+6)
+SELECT u.nome, SUM(c.valor) as total FROM usuario as u, corrida as c
+WHERE u.idusuario = c.idusario_motorista
+GROUP BY u.idusuario
+ORDER BY total DESC
+LIMIT 10;
+
+7)
+SELECT AVG(c.valor) as media_valor_corridas FROM corrida as c, usuario as u, endereco as en, cidade as ci
+WHERE ((c.idusario_motorista = u.idusuario) OR (c.idusuario_passageiro = u.idusuario))
+AND u.idendereco = en.idendereco
+AND en.idcidade = ci.idcidade
+AND ci.idestado = 2;
+
+8)
+UPDATE endereco as en
+SET logradouro="Rua Alperneiros"
+WHERE en.logradouro = "Rua Alpender"
+AND en.bairro = "Santa Cruz"
+AND en.idcidade=8;
+
+10)
+UPDATE corrida 
+SET hora_inicio = (DATE_ADD(hora_inicio, INTERVAL 1 HOUR)), hora_termino = (DATE_ADD(hora_termino, INTERVAL 1 HOUR)) 
+WHERE DATE_FORMAT(data, '%Y-%m-%d')<='2019-02-16' 
+AND DATE_FORMAT(data, '%Y-%m-%d')>='2018-11-4';
+
+11)
+UPDATE corrida AS co, carro AS ca 
+SET co.valor=co.valor*0.8 
+WHERE ca.idusuario=co.idusario_motorista 
+AND ca.ano<2014;
+
+12)
+DELETE c FROM cidade AS c, endereco AS e, usuario AS u 
+WHERE u.idusuario=7 
+AND u.idendereco=e.idendereco 
+AND c.idcidade=e.idcidade;
+
+13)DELETE c FROM corrida AS c, usuario AS u 
+WHERE TIMESTAMPDIFF(YEAR, u.datanascimento, now())>=18;

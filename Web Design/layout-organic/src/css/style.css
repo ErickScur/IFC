@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(#F1FEFE, #F2FEFE);
+    color: #374B5C;
+}
+
+header {
+    text-align: center;
+}
+
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.7vw 10vw 1vw 10vw;
+}
+
+header .navbar nav ul {
+    display: flex;
+    align-items: center;
+}
+
+header .navbar nav ul li {
+   
+    font-size: 2.1vh;
+    padding: 10px 15px;
+}
+
+header .navbar nav ul li a {
+    color: rgb(61, 61, 61);
+    text-decoration: none;
+}
+
+main .banner {
+    height: 80vh;
+    display: flex;
+    overflow: hidden;
+}
+main .banner-info{
+    padding: 8vw 15vw 1vw 10vw;
+    width: 50%;
+}
+main .banner-info h3{
+    font-size: 4.2vh;
+}
+main .banner-info h2{
+    font-size: 6.4vh;
+    font-weight: bold;
+}
+main .banner-info p{
+    padding-top: 40px;
+    font-size: 2vh;
+}
+main .banner-info p a {
+    background-color: #08dcd4;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    border-radius: 10px;
+    padding: 20px 70px;
+    text-align: center;
+    text-decoration: none;
+}
+main section#welcome {
+  padding: 10vh 10vw 10vh 10vw;
+  text-align: center;
+}
+
+main section#welcome h2 {
+  padding: 9vh 0 0 0;
+  font-size: 3em;
+}
+
+main section#welcome h3 {
+  padding: 5vh 15vw 5vh 15vw;
+  font-size: 1.4em;
+}
+
+main section#welcome div.container {
+  padding: 7vh 0 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+main section#welcome div.item {
+  border: 3px dashed;
+  border-radius: 18px;
+  padding: 8vh 0vw 8vh 0vw;
+}
+main section#welcome div.item h4{
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+main section#welcome div.item p{
+    padding: 0px 20px;
+}
+main .content{
+    margin-top: 26vh;
+    text-align: center;
+    width: 100%;
+}
+main .content h3{
+    margin-bottom: 30px;
+    font-size: 2.3em;
+}
+main .content p{
+    font-size: 1.2em;
+    margin-bottom: 60px;
+    padding: 0vw 25vw;
+}
+main #parceiros #logos{
+    display: flex;
+    justify-content: space-between;
+    padding: 0vw 11vw;
+}
+main #blog{
+    max-width: 100%;
+}
+main #blog .posts{
+    padding: 0vw 20vw;
+    display: flex;
+    justify-content: space-between;
+}
+main #blog .post{
+    width: 33.3%;
+}
+main #blog .post h4{
+    font-size: 1.4em;
+    padding-top: 20px;
+    color: aqua;
+}
+main #blog .post p{
+    padding: 20px ;
+    font-size: 1em;
+    margin: 0px;
+}
+main #blog .post a{
+    text-decoration: none;
+    color: #374B5C;
+}
+footer{
+    margin-top: 20vh;
+    color: #ffffff;
+    background-color: #374B5C;
+}
+footer .row{
+    display: flex;
+    padding: 5vh 5vw;
+    justify-content: space-around;
+}
+footer .col{
+    width: 33.3%;
+}
+footer .row .col p{
+    padding: 20px 100px 0px 0px;
+}
+footer .row .col p#copyright{
+    font-weight: bold;
+}
+footer .row .col hr{
+    width: 15%;
+    float: left;
+    background-color: aqua;
+    border-color: aqua;
+    border-radius: 1px;
+    height: 2px;
+}
+footer .row .col h5{
+    font-weight: bold;
+    font-size: 1.1em;
+}
+footer .row .col ul li{
+    padding-top: 10px;
+}
+footer .row .col ul li a{
+    color: white;
+    text-decoration: none;
+}
+footer .social-media-icon{
+    width: 40px;
+    padding-right: 20px;
+}
