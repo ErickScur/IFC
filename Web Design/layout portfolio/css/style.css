@@ -141,3 +141,88 @@ main section#grid .container-grid li a{
     text-decoration: none;
     font-weight: 500;
 }
+
+main section#empresas .container{
+    margin-top: 15vh;
+    background-color: #FEF2F2;
+    height: 200px;
+}
+main section#empresas .container h3{
+    position: absolute;
+}
+main section#empresas .container ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+main section#cards .container{
+    margin-top: 5vh;
+    justify-content: space-between;
+    text-align: center;
+}
+main section#cards .container .card{
+    padding: 0px 60px;
+}
+main section#cards .container .card img{
+    margin-bottom: 30px;
+}
+main section#cards .container .card h3{
+    color: #374151;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+main section#cards .container .card p{
+    font-weight: 100;
+    font-size: 18px;
+}
+
+main section#careers {
+    margin-top: 15vh;
+    width: 100%;
+    text-align: center;
+}
+main section#careers .container{
+    flex-direction: column;
+}
+main section#careers h1{
+    color: #1F2937;
+    font-size: 48px;
+    font-weight: 600;
+}
+main section#careers table{
+    text-align: left;
+    margin-top: 50px;
+    width: 100%;
+}
+main section#careers table td{
+    color: #1F2937;
+    padding-top: 100px;
+}
+main section#careers table td strong{
+    font-weight: bold;
+}
+main section#careers table thead{
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+footer .container{
+    flex-direction: column;
+    text-align: center;
+    background-color: #FEF2F2;
+    margin-top: 10vh;
+}
+footer .container h3{
+    font-size: 48px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 30px;
+    padding-top: 50px;
+}
+footer .container ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 25vw;
+}
