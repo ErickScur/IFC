@@ -1,0 +1,47 @@
+<%- include('partials/header.ejs') %> 
+<body>
+    <div class="container">
+        <h1>Tela Usuário Logado!</h1>
+        <form action="/setcookie" method="POST">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Salvar Cookie</h1>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="chave">Chave</label>
+                        <input type="text" class="form-control" name="chave" autofocus="autofocus" onfocus="this.select()" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="valor">Valor</label>
+                        <input type="text" name="valor" class="form-control" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="valor">Tempo (minutos)</label>
+                        <input type="number" name="tempo" class="form-control" required/>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-block">Salvar Cookie</button>
+                </div>
+            </div>
+        </form>
+        <form action="/limparcookie" method="POST">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Limpar Cookie</h1>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="chave">Chave</label>
+                        <input type="text" class="form-control" name="chave" autofocus="autofocus" onfocus="this.select()" required/>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-block">Limpar Cookie</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<%- include('partials/footer.ejs') %> 
