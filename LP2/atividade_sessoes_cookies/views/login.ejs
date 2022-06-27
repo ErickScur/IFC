@@ -1,0 +1,33 @@
+<%- include('partials/header.ejs') %> 
+
+<body>
+    <div class="container form">
+        <% 
+            if(erro){
+                %> <h1 style="color: red">Usuário ou Senha Incorretos</h1> <% 
+            }
+        %> 
+        <form method="POST" action="/user/auth">
+            <div class="card">
+                <div class="card-header">
+                    <h1 id="h1form">Login</h1>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="titulo">Login</label>
+                        <input type="text" class="form-control" name="login" autofocus="autofocus" onfocus="this.select()" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="titulo">Senha</label>
+                        <input type="password" name="password" class="form-control" required/>
+                    </div> 
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </div>
+            </div>
+        </form>
+        <a href="/user/create">Criar Usuário</a>
+    </div>
+</body>
+<%- include('partials/footer.ejs') %> 

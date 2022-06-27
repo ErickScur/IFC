@@ -1,0 +1,24 @@
+<%- include('partials/header.ejs') %> 
+<style>
+    .card {
+        margin-right: 40px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Adri.com</h1>
+        <div class="row">
+            <% produtos.forEach(p => { %> 
+                <div class="card" style="width: 18rem;">
+                    <img src="<%= p.imagem %> " class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= p.nome %> </h5>
+                        <p class="card-text"><%= p.categoria %> </p>
+                        <a href="/produto/<%= p.id %>" class="btn btn-primary">Ver produto</a>
+                    </div>
+                </div>
+            <% }) %> 
+        </div>
+    </div>
+</body>
+<%- include('partials/footer.ejs') %> 
